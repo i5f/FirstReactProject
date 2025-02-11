@@ -1,4 +1,4 @@
-function TabButton({label, onSelect, isSelected}){ // [2]          //function TabButton(props) { [1]
+function TabButton({label, isSelected, ...restProps}){ // [2]          //function TabButton(props) { [1]
     // props.children is used to acces the content between the opening
     // and closing tags of the components and it can be some text ot any 
     // other valid JSX structure
@@ -7,7 +7,7 @@ function TabButton({label, onSelect, isSelected}){ // [2]          //function Ta
 
     return (
         <li> {/* list item */}
-            <button className={isSelected ? "active" : ""} onClick={onSelect} >
+            <button className={isSelected ? "active" : ""} {...restProps} >
                 {label}
             </button>
         </li>
